@@ -1,9 +1,6 @@
-SALESPERSON_INDEX = 0
-INTERNET_INDEX = 1
-LINE_LENGTH = 80
 
-print("*" * LINE_LENGTH)
-
+divider = "*" * 70
+print(divider)
 
 def melon_counts(filename):
 
@@ -19,6 +16,7 @@ def melon_counts(filename):
     file.close()
     return melon_tallies
 
+
 def sales_stats():
 
     melon_tallies = melon_counts("orders-by-type.txt")
@@ -30,9 +28,10 @@ def sales_stats():
         total_revenue += revenue
         # print("We sold %d %s melons at %0.2f each for a total of %0.2f" % (melon_tallies[melon_type], melon_type, price, revenue))
         print("We sold {} {} melons at {:.2f} each for a total of {:.2f}".format(melon_tallies[melon_type], melon_type, price, revenue))
-    print("******************************************")
-
+    print(divider)
+    
 sales_stats()
+
 
 def sales_orders(filename):
 
@@ -54,6 +53,8 @@ def sales_orders(filename):
         print("Guess there's some value to those salespeople after all.")
     else:
         print("Time to fire the sales team! Online sales rule all!")
-    print("******************************************")
+    print(divider)
+
+    file.close()
 
 sales_orders("orders-with-sales.txt")
